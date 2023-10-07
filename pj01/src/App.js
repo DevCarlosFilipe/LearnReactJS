@@ -1,14 +1,15 @@
 import './App.css';
-import Evento from './components/Evento';
-import Form from './components/Form';
+import RendLista from './components/RendLista';
 
 function App() {
+
+    const meusItens = ['React', 'PHP', 'WordPress']
+
     return (
         <div className="App">
-            <h1>Testando Eventos</h1>
-            <Evento numero={1} />
-            <Evento numero={2} />
-            <Form />
+            <h1>Renderização de listas</h1>
+            <RendLista itens={meusItens} />
+            <RendLista itens={[]} />
         </div>
     );
 }
