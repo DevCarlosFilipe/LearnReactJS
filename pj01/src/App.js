@@ -1,15 +1,16 @@
-import './App.css';
-import RendLista from './components/RendLista';
+import "./App.css";
+import { useState } from "react";
+import SeuNome from "./components/SeuNome";
+import BemVindo from "./components/BemVindo";
 
 function App() {
-
-    const meusItens = ['React', 'PHP', 'WordPress']
+    const [nome, setNome] = useState();
 
     return (
         <div className="App">
-            <h1>Renderização de listas</h1>
-            <RendLista itens={meusItens} />
-            <RendLista itens={[]} />
+            <h1>State Lift</h1>
+            <SeuNome setNome={setNome} />
+            <BemVindo nome={nome} />
         </div>
     );
 }
