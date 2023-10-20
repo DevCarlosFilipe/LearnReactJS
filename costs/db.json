@@ -1,33 +1,21 @@
 {
-    "projects": [
-        {
-            "name": "Nome teste do projeto",
-            "budget": "5050",
-            "category": {
-                "id": "4",
-                "name": "Planejamento"
-            },
-            "cost": 0,
-            "services": [],
-            "id": 1
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Infra"
-        },
-        {
-            "id": 2,
-            "name": "Desenvolvimento"
-        },
-        {
-            "id": 3,
-            "name": "Design"
-        },
-        {
-            "id": 4,
-            "name": "Planejamento"
-        }
-    ]
+  "projects": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
 }
