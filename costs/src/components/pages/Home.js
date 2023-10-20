@@ -1,5 +1,4 @@
 import styles from "./css/Home.module.css";
-import { Link } from "react-router-dom";
 import savings from "../../img/savings.svg";
 import LinkButton from "../layout/LinkButton";
 
