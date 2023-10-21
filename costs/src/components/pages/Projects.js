@@ -12,6 +12,7 @@ import styles from "./css/Projects.module.css";
 function Projects() {
     const [projects, setProjects] = useState([]);
     const [removeLoading, setRemoveLoading] = useState(false);
+    const [projectsMessage, setProjectMessage] = useState('')
 
     const location = useLocation();
     let message = "";
@@ -37,6 +38,21 @@ function Projects() {
         }, 300);
     }, []);
 
+    function removeProject(id) {
+        fetch(`//localhost:5000/projects/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((resp) => resp.json())
+            .then(() => {
+                setProjects(projects.filter((project) => project.id !== id));
+                // msg
+                setProjectMessage('Projeto removido com sucesso!')
+            })
+            .catch((error) => console.log(error));
+    }
 
     return (
         <div className={styles.project_container}>
@@ -45,6 +61,7 @@ function Projects() {
                 <LinkButton to="/newproject" text="Criar Projeto" />
             </div>
             {message && <Message msg={message} type="success" />}
+            {projectsMessage && <Message msg={projectsMessage} type="success" />}
 
             <Container customClass="start">
                 {projects.length > 0 &&
@@ -55,6 +72,7 @@ function Projects() {
                             name={project.name}
                             budget={project.budget}
                             category={project.category.name}
+                            handleRemove={removeProject}
                         />
                     ))}
                 {!removeLoading && <Loading />}
