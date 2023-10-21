@@ -37,6 +37,7 @@ function Projects() {
         }, 300);
     }, []);
 
+
     return (
         <div className={styles.project_container}>
             <div className={styles.title_container}>
